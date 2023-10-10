@@ -3,3 +3,18 @@ provider "aws" {
   region  = "us-east-1"
   #profile = 
 }
+
+terraform {
+   required_providers {
+    splunk = {
+      source  = "splunk/splunk"
+    }
+  }
+}
+
+provider "splunk" {
+  url                  = "localhost:8089"
+  username             = "admin"
+  password             = "SPLUNK"
+  insecure_skip_verify = true
+}
