@@ -5,9 +5,11 @@ provider "aws" {
 }
 
 terraform {
+   required_version = "= 1.6.0"
    required_providers {
     splunk = {
       source  = "splunk/splunk"
+      version = "1.4.21"
     }
   }
 }

@@ -66,7 +66,6 @@ resource "aws_route_table_association" "public_subnet_az1_rt_association" {
 }
 
 
-
 # create private data subnet az1
 #resource "aws_subnet" "private_data_subnet_az1" {
   #vpc_id                  = 
@@ -79,7 +78,7 @@ resource "aws_route_table_association" "public_subnet_az1_rt_association" {
  # }
 #}
 
-
+# Splunk Instance 
 resource "aws_instance" "splunk_ec2" {
   ami           = data.aws_ami.splunk.id
   instance_type = "t2.medium"
@@ -91,6 +90,7 @@ resource "aws_instance" "splunk_ec2" {
   }
 }
 
+# Splunk SG
 resource "aws_security_group" "splunksg" {
   name        = "SplunkSecGroup"
   description = "Allow-on-port-8000"
